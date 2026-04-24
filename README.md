@@ -1,4 +1,4 @@
-# AWS KMS Encryption Lab 5.1
+# AWS-Access-Control-Hardening Project
 
 ![AWS KMS](https://img.shields.io/badge/AWS-KMS-orange)
 ![Amazon S3](https://img.shields.io/badge/Amazon-S3-blue)

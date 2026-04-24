@@ -1,28 +1,23 @@
-# Screenshots
-
 Screenshots and Evidence
-
-All screenshots document validation of encryption, access control, logging, and failure impact.
-
-File	Evidence
-01-kms-key-created.png	Customer managed KMS key successfully created and available for encryption operations
-02-s3-bucket-encryption.png	Default bucket encryption configured using SSE KMS
-03-encrypted-upload.png	S3 object uploaded with KMS encryption enabled
-04-object-encryption-confirmed.png	Object metadata confirms SSE KMS encryption applied
-05-public-access-denied.png	Public access blocked, confirms no unauthorized plaintext exposure
-06-invalid-argument-error.png	Misconfigured public access attempt fails, validates enforcement of encryption requirements
-07-signed-access-success.png	Controlled access works using authenticated request
-08-cloudtrail-kms-filter.png	CloudTrail filtering shows visibility into KMS activity
-09-generate-data-key-event.png	KMS GenerateDataKey event confirms envelope encryption workflow
-10-decrypt-event.png	KMS Decrypt event confirms secure access to encrypted object
-11-unencrypted-volume.png	Baseline EC2 root volume without encryption
-12-snapshot-created.png	Snapshot used as migration step toward encryption
-13-encrypted-volume-created.png	Encrypted EBS volume created using KMS key
-14-volumes-labeled.png	Clear identification of encrypted versus unencrypted volumes
-15-volume-swapped.png	Successful replacement of root volume with encrypted version
-16-key-disabled.png	KMS key disabled to simulate security failure scenario
-17-instance-failed-to-start.png	EC2 boot failure proves dependency on KMS key
-18-s3-kms-disabled-error.png	S3 access failure confirms encryption enforcement when key is unavailable
-19-cloudtrail-disable-event.png	CloudTrail logs key disable action for audit tracking
-20-key-re-enabled-instance-running.png	Service restored after key reactivation
-21-lab-score.png	Lab completion and validation of all required tasks
+#	Category	File Name	Security Validation
+01	KMS Setup	kms-key-created.png	Customer managed key created and ready for encryption use
+02	S3 Encryption	s3-bucket-encryption.png	Default SSE KMS encryption configured on bucket
+03	S3 Encryption	encrypted-upload.png	Object uploaded with KMS encryption enabled
+04	S3 Validation	object-encryption-confirmed.png	Object metadata confirms encryption applied
+05	Access Control	public-access-denied.png	Public access blocked, no unauthorized exposure
+06	Access Control	invalid-argument-error.png	Invalid access attempt rejected by S3
+07	Access Control	signed-access-success.png	Secure access works with authenticated request
+08	Monitoring	cloudtrail-kms-filter.png	CloudTrail shows visibility into KMS operations
+09	Monitoring	generate-data-key-event.png	GenerateDataKey event confirms encryption workflow
+10	Monitoring	decrypt-event.png	Decrypt event confirms secure data access
+11	EBS Baseline	unencrypted-volume.png	Initial state shows unencrypted root volume
+12	EBS Migration	snapshot-created.png	Snapshot created for encryption process
+13	EBS Migration	encrypted-volume-created.png	New encrypted volume created using KMS
+14	EBS Migration	volumes-labeled.png	Clear distinction between volumes
+15	EBS Migration	volume-swapped.png	Encrypted volume successfully attached
+16	Failure Test	key-disabled.png	KMS key disabled to simulate outage
+17	Failure Test	instance-failed-to-start.png	EC2 fails to boot without key access
+18	Failure Test	s3-kms-disabled-error.png	S3 access fails due to disabled key
+19	Monitoring	cloudtrail-disable-event.png	CloudTrail logs key disable event
+20	Recovery	key-re-enabled-instance-running.png	Services restored after key activation
+21	Validation	lab-score.png	Lab completion and verification
